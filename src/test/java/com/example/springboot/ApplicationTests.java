@@ -1,10 +1,12 @@
 package com.example.springboot;
 
+import io.github.nettyplus.leakdetector.junit.NettyLeakDetectorExtension;
 import io.netty.channel.epoll.Epoll;
 import io.netty.handler.ssl.OpenSsl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -19,6 +21,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@ExtendWith(NettyLeakDetectorExtension.class)
 class ApplicationTests {
 
 	@LocalServerPort
