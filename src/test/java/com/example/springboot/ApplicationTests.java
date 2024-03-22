@@ -26,6 +26,7 @@ class ApplicationTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
+
 	@Autowired
 	private ApplicationContext context;
 
@@ -50,8 +51,8 @@ class ApplicationTests {
 	@Test
 	void webServerIsNettyWebServer() {
 		assertThat(context).isNotNull();
-		ReactiveWebServerApplicationContext reactiveWebServerApplicationContext = (ReactiveWebServerApplicationContext) context;
-		WebServer webServer = reactiveWebServerApplicationContext.getWebServer();
+		var reactiveWebServerCtx = (ReactiveWebServerApplicationContext) context;
+		WebServer webServer = reactiveWebServerCtx.getWebServer();
 		assertThat(webServer).isNotNull();
 		assertThat(webServer).isInstanceOf(NettyWebServer.class);
 	}
