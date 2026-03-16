@@ -18,46 +18,28 @@
 	</properties>
 	<repositories>
 		<repository>
-			<id>maven-central</id>
-			<name>maven-central</name>
-			<url>https://repo1.maven.org/maven2/</url>
-		</repository>
-		<repository>
 			<id>spring-milestone</id>
-			<name>spring-milestone</name>
+			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
-			<snapshots/>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>maven-central</id>
-			<name>maven-central</name>
-			<url>https://repo1.maven.org/maven2/</url>
-		</pluginRepository>
-		<pluginRepository>
 			<id>spring-milestone</id>
-			<name>spring-milestone</name>
+			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
-			<snapshots/>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>${logback.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.netty</groupId>
